@@ -1,0 +1,830 @@
+
+*,
+*::after,
+*::before{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+@media(max-width:768px){
+    body{
+        font-size: 14px;
+    }
+}
+
+/*----Preloader----*/
+
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  background: none repeat scroll 0 0 #ffffff;
+}
+
+.spinner {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  position: relative;
+}
+
+.spinner:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: 2px solid #E3AE57;
+  border-top-color: #f9f9f9;
+  animation: spinner 0.6s linear infinite;
+}
+
+    
+ @keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+   
+
+/*----header_bar----*/
+
+
+.scroll-down{
+    box-shadow: 0 0.5rem 0.8rem rgba(0 ,0,0,0.1);
+    background-color:white!important;
+}
+
+.header_nav--active{
+    display: flex !important;
+}
+
+.header_bar{
+    width: 100%;
+    height: 3.8rem;
+    display: flex;
+    background-color:transparent;
+    align-items: center;
+    position: fixed;
+    padding: 0 3.5rem;
+    z-index: 77777;
+}
+
+@media(max-width:768px){
+    .header_bar{
+        flex-wrap: wrap;
+        vertical-align: middle;
+        background-color:white;
+        padding: 0 2.5rem;
+        height: auto;
+    }
+}
+
+.header_button{
+    display: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: gray
+}
+
+@media(max-width:768px){
+    .header_button{
+        display: block;
+        margin-left: auto;
+      
+    }
+}
+
+
+.logo_link{
+    font-size: 24px;
+    line-height: 35px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+    font-weight: 580;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.header_nav{
+    width: 100%;
+    justify-content: flex-end;
+}
+
+@media(max-width:768px){
+    .header_nav{
+        flex: 100%;
+        display: none;
+        justify-content: flex-start;
+    }
+}
+
+.header_list{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media(max-width:768px){
+    .header_list{
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+}
+
+.header_link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: system-ui;
+    color: black;
+    padding: 0 1rem;
+    letter-spacing: 2px;
+    transition: color 0.4s ease;
+}
+
+@media(max-width:768px){
+    .header_link{
+        flex: 100%;
+        padding: 1rem 0;
+    }
+}
+
+.header_link:hover{
+    color: #e3ae58;
+}
+.header_link:active{
+  color: #e3ae58;
+}
+
+
+
+/*----container container--fluid hero----*/
+
+
+.container{
+    display: flex;
+    width: 100%;
+}
+
+.container--fluid{
+    height: 100vh;
+}
+
+.hero{
+    flex: 50%;
+    background-color: #f1e2d7;
+}
+
+@media(max-width:768px){
+    .hero{
+        flex-direction: column;
+        height: auto;
+    }
+}
+        .hero_image{
+            flex: 50%;
+        }
+
+        .hero_img-2{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+         .hero_main{
+             flex: 50%;
+        }
+
+         .hero_main-1{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             height: 100%;
+             padding: 0 3rem;
+             gap: 1rem;
+        }
+
+@media(max-width:768px){
+    .hero_main-1{
+        padding: 2rem;
+    }
+}
+
+.hero_subtitle{
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-family:system-ui;
+    font-weight:500;
+    color: gray;
+}
+
+.hero_main-1 h1{
+    font-family:system-ui;
+    font-weight:350;
+    font-size:2.3rem;
+    color: gray;
+}
+
+.hero_main-1 span{
+    color: black;
+    font-weight:350;
+}
+
+.hero_main-1 p{
+    color: gray;
+    font-family: system-ui;
+}
+
+.hero_main-list{
+     margin-left: 1.25rem;
+     font-size: .90rem;
+     font-weight: normal;
+     font-family: system-ui;
+}
+ 
+.cta{
+    border: 3px solid black;
+    padding: 1rem 3rem;
+    width: fit-content;
+    border-radius: 5rem;
+    font-weight:600;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    margin-top: 2rem;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.cta:hover{
+    background-color: #e3ae58;
+    border-color: #e3ae58;
+    color:white;
+}
+
+
+/*----container-2----*/
+
+
+.skills{
+    display: flex;
+    width: 100%;
+    flex-flow: wrap row;
+
+}
+
+@media(max-width :768px){
+    .skills{
+        flex-flow: column nowrap;
+        height: auto;
+    }
+}
+
+.skill_meta{
+    flex: 50%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 768px){
+    .skill_meta{
+        padding: 2rem;
+    }
+}
+
+.title{
+    font-size: 2.4rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    margin-top: 1rem;
+}
+
+.title--white{
+    color: white;
+    font-family: system-ui;
+    font-weight: 200;
+    margin-top:0; 
+}
+
+.sub-title{
+    color: #e3ae57;
+    font-size: 1rem;
+    font-family: system-ui;
+    font-weight:normal;
+    margin: 1rem 0;
+}
+
+.sub-title--white{
+    color: white;
+    margin: .80rem 0 2rem 0;
+    font-weight:300;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+
+.bold{
+    font-weight: bolder;
+}
+
+.para-1{
+    margin: 1.5rem 0 0 0;
+    color: gray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    line-height: 1.5rem;  
+}
+
+.para-1:nth-of-type(2){
+    margin-top: 1rem;
+}
+
+.right{
+    display: flex;
+    flex: 50%;
+    background-color: #e3ae57;
+}
+
+@media(max-width: 768px){
+    .right{
+        flex-flow: column nowrap;
+    }
+}
+
+.img-box{
+    flex: 50%;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media(max-width:768){
+    .img{
+        min-height: 65vh;
+        max-height: 75vh;
+    }
+}
+
+.block{
+    flex: 50%;
+    padding: 2rem;
+}
+
+.skill{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+    font-family: system-ui;
+}
+
+.skill-row{
+    display: flex;
+}
+
+.skill-row:nth-of-type(1){
+    justify-content: space-between;
+    font-size: 0.7rem;
+}
+
+.skill-row:nth-of-type(2){
+    position: relative;
+}
+
+.count{
+     color: white;
+     font-weight: 600;
+}
+.skill-progress{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: relative;
+}
+
+.skill-filled{
+    width: 10px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+}
+
+
+/*----container-3 & 4----*/
+
+
+.exp {
+    display: flex;
+    width: 100%;
+    height: 450px;
+    flex-flow: wrap row;
+  }
+  
+  @media (max-width: 768px) {
+    .exp {
+      flex-flow: column nowrap;
+      height: auto;
+    }
+  }
+  
+  .exp--left {
+    flex-direction: row;
+  }
+  
+  @media (max-width: 768px) {
+    .exp--left {
+      flex-flow: column nowrap;
+      height: auto;
+    }
+  }
+  
+  .exp--right {
+     flex-direction: row-reverse;
+  }
+  
+  @media (max-width: 768px) {
+    .exp--right {
+        flex-flow: column-reverse nowrap;
+    }
+  }
+  
+  .exp_img-box, .exp_info {
+     flex:50%;
+    height: 100%;
+  }
+  
+  .exp_img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .exp_img {
+      min-height: 65vh;
+      max-height: 75vh;
+    }
+  }
+  
+  .exp_info {
+    padding: 3rem;
+    color: white;
+  }
+  
+  @media screen and (max-width: 1070px) {
+    .exp_info {
+      padding: 2rem;
+    }
+  }
+  
+  .exp_info--brown {
+    background: #ee683b;
+  }
+  
+  .exp_info--yellow {
+    background-color: #e3ae58;
+  }
+  
+  .exp_title {
+    font-family: system-ui;
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+  
+  .exp_subtitle {
+    font-weight: 300;
+    font-family: system-ui;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .exp_list {
+    list-style: none;
+  }
+  
+  .exp_item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .exp_icon i {
+    font-size: 2rem;
+  }
+  
+  .exp_heading {
+    font-weight: 300;
+    font-family: system-ui;
+    font-size: 1.6rem;
+  }
+  
+  .exp_dates {
+    color:rgb(26, 25, 25);
+    font-family: system-ui;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  
+  .exp_desc {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-family: system-ui;
+    font-weight: 350;
+  }
+
+
+/*-----container 5------*/
+
+
+.quote{
+    height: 400px;
+    width: 100%;
+    color: white;
+}
+
+.quote__box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.quote__icon{
+    font-size: 3rem;
+}
+
+.text{
+    font-size: 2rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    max-width: 70%;
+    text-align: center;
+}
+
+
+/*--container 6--*/
+
+
+.contact {
+    display: flex;
+    width: 100%;
+    height: 75vh;
+  }
+  
+@media(max-width:768px){
+    .contact{
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+  .contact_form {
+    flex: 50%;
+  }
+  
+  .contact_right{
+    flex:50%;
+    display: flex;
+    background: #161616;
+    color: white;
+  }
+  
+@media(max-width:768px){
+    .contact_right{
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+  .contact_img-box {
+     flex:50%;
+  }
+  
+  .contact_info {
+    flex:50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .contact_title {
+    font-weight:350;
+    font-size: 1.7rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  
+  .contact_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+@media(max-width:768px){
+    .contact_img{
+        min-height: 65vh;
+        max-height: 75vh;
+    }
+}
+
+  .contact_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.80rem;
+  }
+  
+  .contact_item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .contact_item i {
+    font-size: 1rem;
+  }
+  
+  .contact_link {
+    color:#e3ae57;
+    text-decoration: none;
+    font-family: system-ui;
+    font-size: 1rem;
+    font-weight: 100;
+    letter-spacing: 1.25px;
+  }
+  
+  .contact_heading {
+    font-weight:350;
+    font-size: 1.5rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .contact_address {
+    font-size: 1rem;
+    font-weight: 100;
+    font-family: system-ui;
+    font-style: normal;
+    color: #888;
+  }
+  
+  .contact_form {
+    background: #e9724c;
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact_main-title {
+    font-size: 2.5rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+  
+  .contact_input, .contact_textarea {
+    background: transparent;
+    border: none;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #e3ae57;
+    color: white;
+  }
+  
+  .contact_input::-webkit-input-placeholder, .contact_textarea::-webkit-input-placeholder {
+    color: white;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-family: system-ui;
+    font-weight:200;
+  }
+  
+  .contact_input:-ms-input-placeholder, .contact_textarea:-ms-input-placeholder {
+    color: white;
+    text-transform: capitalize;
+  }
+  
+  .contact_input::-ms-input-placeholder, .contact_textarea::-ms-input-placeholder {
+    color: white;
+    text-transform: capitalize;
+  }
+  
+  .contact_input::placeholder, .contact_textarea::placeholder {
+    color: white;
+    text-transform: capitalize;
+  }
+  
+  .contact_input:focus, .contact_textarea:focus {
+    outline: none;
+    border-bottom-color: white;
+  }
+  
+  .contact_textarea {
+    flex-grow: 1;
+  }
+  
+  .contact_btn {
+    background: white;
+    font-size: 1.1rem;
+    font-family: system-ui;
+    font-weight:200;
+    border-radius: 5rem;
+    padding: 0.75rem 7.5rem;
+    width: fit-content;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+  }
+  
+  .contact_btn:hover {
+    background: transparent;
+    color: white;
+  }
+
+  
+/*---footer---*/
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 10rem 0;
+    color: gray;
+}
+@media(max-width:768px){
+    .footer{
+        padding: 5rem 1rem;
+    }
+}
+
+.footer_copy{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer_list{
+    display: flex;
+    list-style: none;
+}
+
+.footer_link{
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    justify-content: center;
+} 
+
+.footer_link  i{
+    position: relative;
+    padding: 1.2rem;
+    color: gray;
+    font-size: .9rem;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    transition: all 0.4s ease;
+}
+
+.footer_link  i:hover{
+    
+    background-color:#e3ae57;
+    color: rgb(253, 251, 251);
+    border-color: rgb(253, 251, 251);
+    transform: scale(1.1);
+}
+
